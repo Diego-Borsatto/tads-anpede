@@ -21,7 +21,6 @@ public class Emprestimo implements Serializable {
 	private Long id;
 	private LocalDate dataRetirada;
 	private LocalDate dataDevolucao;
-	private EquipamentoItem equipamento;
 	private String motivo;
 	
 	@ManyToOne
@@ -42,11 +41,19 @@ public class Emprestimo implements Serializable {
 		this.id = id;
 		this.dataRetirada = dataRetirada;
 		this.dataDevolucao = dataDevolucao;
-		this.equipamento = equipamento;
+		this.equipamentoItem = equipamento;
 		this.motivo = motivo;
 	}
 	
 	
+
+	public Associado getAssociado() {
+		return associado;
+	}
+
+	public void setAssociado(Associado associado) {
+		this.associado = associado;
+	}
 
 	public Long getId() {
 		return id;
@@ -72,12 +79,12 @@ public class Emprestimo implements Serializable {
 		this.dataDevolucao = dataDevolucao;
 	}
 
-	public EquipamentoItem getEquipamento() {
-		return equipamento;
+	public EquipamentoItem getEquipamentoItem() {
+		return equipamentoItem;
 	}
 
-	public void setEquipamento(EquipamentoItem equipamento) {
-		this.equipamento = equipamento;
+	public void setEquipamentoItem(EquipamentoItem equipamentoItem) {
+		this.equipamentoItem = equipamentoItem;
 	}
 
 	public String getMotivo() {
