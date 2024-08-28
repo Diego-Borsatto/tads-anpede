@@ -12,8 +12,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tb_Retirada_Fralda")
-public class RetiradaFralda implements Serializable{
+@Table(name = "tb_retirada_fralda")
+public class RetiradaFralda implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -28,19 +29,21 @@ public class RetiradaFralda implements Serializable{
 	@ManyToOne
 	private Fralda fralda;
 	
+	
 	public RetiradaFralda() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public RetiradaFralda(Long id, Integer quantidade, LocalDate dataRetirada) {
+	public RetiradaFralda(Long id, Integer quantidade, LocalDate dataRetirada, Associado associado) {
 		super();
 		this.id = id;
 		this.quantidade = quantidade;
 		this.dataRetirada = dataRetirada;
+		this.associado = associado;
 	}
 	
 	
-
+	
 	public Fralda getFralda() {
 		return fralda;
 	}
@@ -99,4 +102,5 @@ public class RetiradaFralda implements Serializable{
 	}
 	
 	
+
 }
